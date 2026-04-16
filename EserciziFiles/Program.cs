@@ -31,10 +31,26 @@
                 sw.WriteLine("LINGUA => IT" );
                 sw.WriteLine("LIVELLO => ADMIN");
                 sw.WriteLine("AUTOSAVE => ATTIVO ");
+                sw.WriteLine("--------------------");
+                sw.WriteLine("EOF");
 
 
 
             }
+
+            string rigaTot = "";
+            using (StreamReader sr = new StreamReader(percorsoFile))
+            {
+                string riga4 = sr.ReadLine();
+                while (riga4 != null) 
+                {
+                    rigaTot += riga4;
+                    riga4 = sr.ReadLine();
+                }
+
+                
+            }
+            Console.WriteLine("Procedura completata: log generato correttamente, i caratteri totali scritti sono : " + rigaTot.Length);
         }
     }
 }
